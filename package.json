@@ -1,0 +1,15 @@
+{
+  "name": "cdp-recruitement-javascript-leo-diduch",
+  "version": "1.0.0",
+  "description": "recruitement-test-js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Léo Diduch",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.13.12",
+    "eslint": "^7.22.0"
+  }
+}
