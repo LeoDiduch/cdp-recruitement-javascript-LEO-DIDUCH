@@ -9,7 +9,7 @@ const args = process.argv[2];
  */
 if (args.indexOf('--filter=') > -1) {
     const prefix = args.replace('--filter=', '');
-    const newData = data.filter((data) => {
+    const filteredData = data.filter((data) => {
         data.people = data.people.filter(peopleItem => {
             peopleItem.animals = peopleItem.animals.filter(animalItem => {
                 const newName = animalItem.name.indexOf(prefix);
@@ -19,14 +19,14 @@ if (args.indexOf('--filter=') > -1) {
         });
         if (data.people && data.people.length > 0) { return data }
     });
-    console.log(util.inspect(newData, false, null, true));
+    console.log(util.inspect(filteredData, false, null, true));
 }
 
 /**
  * Counter function
  */
 if (args.indexOf('--count') > -1) {
-    const newData = data.map((data) => {
+    const dataWithCounter = data.map((data) => {
         data.name = data.name + ` [${data.people.length}]`;
         data.people = data.people.map(peopleItem => {
             if (peopleItem.animals && peopleItem.animals.length > 0) {
@@ -36,5 +36,5 @@ if (args.indexOf('--count') > -1) {
         });
         return data;
     });
-    console.log(util.inspect(newData, false, null, true));
+    console.log(util.inspect(dataWithCounter, false, null, true));
 }
